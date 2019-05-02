@@ -1,0 +1,20 @@
+AllCops:
+  Exclude:
+    - 'config/*'
+    - 'config/*/*'
+    - 'bin/*'
+    - 'db/*/*'
+    - 'db/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'Rakefile'
+    - 'Gemfile'
+
+Metrics/BlockLength:
+  Enabled: false
+  Include:
+    - 'spec/**/*'
+
+Documentation:
+  Enabled: false
+
