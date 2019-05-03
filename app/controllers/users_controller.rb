@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def index
     users = User.ransack(params[:q]).result
@@ -39,8 +41,8 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user)
-      .permit(:name, :identification_document, :email,
-                orders_attributes: [:cellphone_model, :cellphone_imei,
-                                    :annual_price, :installments] )
+          .permit(:name, :identification_document, :email,
+                  orders_attributes: %i[cellphone_model cellphone_imei
+                                        annual_price installments])
   end
 end
