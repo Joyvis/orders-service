@@ -32,7 +32,7 @@ RSpec.describe UsersController, type: :controller do
   describe 'updating a user' do
     before { patch :update, params: update_params }
 
-    let(:user) { create(:user, :with_orders) }
+    let(:user) { create(:user) }
 
     let(:update_params) do
       { id: user.id, user: user_params }
@@ -61,8 +61,8 @@ RSpec.describe UsersController, type: :controller do
 
   describe 'listing users' do
     before do
-      create(:user, :with_orders)
-      create(:user, :with_orders, identification_document: '55555')
+      create(:user)
+      create(:user, identification_document: '55555')
       get :index, params: params
     end
 
