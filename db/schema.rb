@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2019_05_02_205110) do
 
   create_table "orders", force: :cascade do |t|
-    t.string "celphone_model", null: false
-    t.string "celphone_imei", null: false
+    t.string "cellphone_model", null: false
+    t.string "cellphone_imei", null: false
     t.float "annual_price", null: false
     t.integer "installments", default: 1
     t.datetime "created_at", null: false
