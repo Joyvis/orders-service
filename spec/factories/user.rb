@@ -5,8 +5,6 @@ FactoryBot.define do
     name { 'User Test' }
     identification_document { '9999999999' }
     email { 'teste@teste.com' }
-    trait :with_orders do
-      orders { build_list :order, 1 }
-    end
+    orders { build_list :order, 1 }
   end
 end
