@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
@@ -64,7 +66,6 @@ RSpec.describe UsersController, type: :controller do
       get :index, params: params
     end
 
-
     context 'with a filter' do
       let(:params) do
         { q: { identification_document_cont: '55555' } }
@@ -98,7 +99,7 @@ RSpec.describe UsersController, type: :controller do
     end
 
     context 'with a invalid user id' do
-      let(:user_id) { 99999 }
+      let(:user_id) { 9999 }
 
       it 'user not displayed' do
         expect(data).to be_blank
