@@ -1,3 +1,4 @@
 class Order < ApplicationRecord
-  validates :annual_price, :celphone_model, :celphone_imei, presence: true
+  belongs_to :user
+  validates :annual_price, :cellphone_model, :cellphone_imei, presence: true
 end
