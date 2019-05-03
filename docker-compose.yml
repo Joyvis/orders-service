@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  pitzi_orders_service:
+    container_name: pitzi_orders_service
+    build: .
+    command:
+      - /bin/sh
+      - -c
+      - |
+        rm -rf tmp/pids
+        bundle exec rails s -p ${RAILS_PORT} -b ${RAILS_BIND}
+    ports:
+      - "${RAILS_PORT}:${RAILS_PORT}"
+    env_file:
+      - '.env'
+    volumes:
+      - .:/${COMPOSE_PROJECT_NAME}
