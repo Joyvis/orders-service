@@ -12,10 +12,15 @@ class ApplicationController < ActionController::API
   private
 
   def serialize_json(result, options = {})
-    klass = result_type(result)
+    options.merge!(include: [included_params])
+    klass = result_type(result.includes(included_params))
     klass.new(result, options).serialized_json
   rescue NameError
     { data: [] }.to_json
+  end
+
+  def included_params
+    params.fetch(:includes, {})
   end
 
   def result_type(result)
