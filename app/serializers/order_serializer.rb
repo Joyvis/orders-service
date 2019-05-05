@@ -2,5 +2,6 @@
 
 class OrderSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :cellphone_model, :cellphone_imei, :annual_price, :installments
+  attributes :cellphone_model, :cellphone_imei, :annual_price, :installments,
+             :user_id
 end
