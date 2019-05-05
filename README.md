@@ -1,24 +1,19 @@
-# README
+# PITZI_ORDERS_SERVICE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## With Docker
 
-Things you may want to cover:
+* Clone repository
+* Use the command ´´docker-compose up -d´´
+* After, use the follow commands
+* ´´docker-compose run pitzi_orders_service rake db:create´´
+* ´´docker-compose run pitzi_orders_service rake db:migrate´´
 
-* Ruby version
+## Without Docker
 
-* System dependencies
+* Clone repository
+* After, user the follow commands
+* ´´rake db:create´´
+* ´´rake db:migrate´´
+* ´´rails s -p 4000´´
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+FRONTEND: https://github.com/Joyvis/pitzi_orders_frontend
